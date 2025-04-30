@@ -1,10 +1,17 @@
 <template>
-    <button class="bg-amber-600 p-[10px] border-0 rounded-2xl hover:bg-amber-200 transition ease-in-out cursor-pointer">Añadir Contacto</button>
+    <button class="bg-amber-600 p-[10px] font-bold hover:border border-0 rounded-2xl hover:bg-amber-200 transition ease-in-out cursor-pointer">
+        {{text ||'Añadir Contacto'}}
+    </button>
 </template>
 
 <script>
 export default {
-    name: "Button"
+    props:{
+        text:{
+            type: String,
+            default: 'Abrir'
+        }
+    }
 }
 </script>
 

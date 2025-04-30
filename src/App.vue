@@ -1,39 +1,35 @@
 <template>
-<div class="flex flex-col items-center justify-center text-center min-h-screen">
-    <div class="border bg-stone-100">
-    <header class="text-3xl p-[30px]" >AGENDA TELEFÓNICA</header>
+<div  class="flex flex-col items-center justify-center text-center min-h-screen bg-[url(../assets/hoja.jpg)] bg-repeat-round ">
+    <div class="border border-dashed ">
+    <header class="text-3xl p-[30px] font-serif underline text-amber-700" >AGENDA TELEFÓNICA</header>
 
-    <Button @click  = "openForm" formtarget="_self"/>
-    <div class="p-[20px]" v-if="showModal === true">
-        <FormPhoneBook />
+        <!--usar un botón con metodo de navegación programática -->
+        <div v-if="$route.path === '/'">
+            <Button @click="navigateToForm" text="Añadir Contacto" />
+        </div>
+
+        <div class="p-5">
+            <router-view />
+        </div>
     </div>
-
-
-    </div>
-
 </div>
 </template>
 
 
 <script>
 import Button from './components/Button.vue';
-import FormPhoneBook from "@/components/FormPhoneBook.vue";
 
 export default {
     components: {
-        FormPhoneBook,
         Button,
     },
     data: () => ({
         showModal: false,
     }),
     methods: {
-        openForm(){
-            this.showModal = true;
-            console.log(this.showModal);
 
-
-
+        navigateToForm(){
+            this.$router.push('/FormPhoneBook');
         }
 
     },
