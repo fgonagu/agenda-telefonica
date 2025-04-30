@@ -1,20 +1,20 @@
 import './assets/main.css'
 
-import { createApp } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import {createApp} from 'vue'
+import {createRouter, createWebHistory} from 'vue-router'
 import App from './App.vue'
 import FormPhoneBook from "@/components/FormPhoneBook.vue";
 
 const routes = [
     {
-      path: '/',
-      name: 'Home',
-      component: ()=> import('./components/Home.vue')
+        path: '/',
+        name: 'Home',
+        component: () => import('./components/Home.vue')
     },
     {
-      path: '/FormPhoneBook',
-      name: 'FormPhoneBook',
-      component: ()=> import('./components/FormPhoneBook.vue')
+        path: '/FormPhoneBook',
+        name: 'FormPhoneBook',
+        component: () => import('./components/FormPhoneBook.vue')
     },
 ]
 
