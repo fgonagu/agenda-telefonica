@@ -16,6 +16,11 @@ const routes = [
         name: 'FormPhoneBook',
         component: () => import('./components/FormPhoneBook.vue')
     },
+    {
+        path: '/ContactsList',
+        name: 'ContactsList',
+        component: () => import('./components/ContactsList.vue')
+    }
 ]
 
 const router = createRouter({
